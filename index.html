@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<meta name="description" content="Análisis cartógráfico del ballotage disputado por Larreta y Lousteau en las elecciones por la jefatura de gobierno de la Ciudad de Buenos Aires." />
+      <meta name="keywords" content="data, visualization, d3, app, web, open data, infographics, analytics" />
+      <meta name="robots" content="INDEX, FOLLOW" />
+      <meta name="author" content="The Viz Machine" />
+      <meta name="geo.region" content="AR" />
+	<!-- FAVICON Stuff -->
+	<link rel="apple-touch-icon" sizes="57x57" href="http://thevizmachine.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://thevizmachine.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://thevizmachine.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://thevizmachine.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://thevizmachine.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://thevizmachine.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://thevizmachine.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://thevizmachine.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://thevizmachine.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="http://thevizmachine.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://thevizmachine.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="http://thevizmachine.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://thevizmachine.github.io/favicon-16x16.png">
+<link rel="manifest" href="http://thevizmachine.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+      <!-- Facebook Stuff -->
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="The Viz Machine" />
+      <meta property="og:title" content="The Viz Machine - Turning data into stories" />
+      <meta property="og:description" content="We are an infographic products, visualizations and data analysis boutique agency for business, media, NGOs and governments. " />
+      <meta property="og:image" content="http://i.imgur.com/usTSU2f.png" />
+      <meta property="og:url" content="http://thevizmachine.github.io" />
+
+      
+      <!-- Twitter Stuff -->
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:site" content="@thevizmachine" />
+      <meta property="twitter:title" content="The Viz Machine - Turning data into stories" />
+      <meta property="twitter:description" content="We are an infographic products, visualizations and data analysis boutique agency for business, media, NGOs and governments." />
+      <meta property="twitter:image" content="http://i.imgur.com/MyUVtTA.png" />
+      <meta property="twitter:url" content="http://thevizmachine.github.io" />
+
+
+
+
+
+
+
+<title>Larreta vs Lousteau</title>
+
+<link href="style.css" rel="stylesheet">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="jquery.mousewheel.min.js"></script>
+</head>
+
+<body>
+<div id="outer_container">
+<div id="customScrollBox">
+	<div class="container">
+    	<div class="content">
+        	<h1 style="margin-bottom: 0px; padding-bottom: 0px;">
+        		<font color="#FFC107">LARRETA</font> vs. <font color="#7B1FA2">LOUSTEAU</font>
+        	</h1> 
+            <h2 style="padding-top: 0px; padding-bottom: 20px; margin-top: 0px;">
+            	1 PUNTO = 10 VOTOS
+            </h2>
+            <p>A simple, yet elegant fullscreen image gallery created with the jQuery framework and some simple CSS.</p>
+
+            <p>Hecho por <a href="twitter.com/thevizmachine">@thevizmachine</a>.</p>
+            
+            <a href="imgs/mapas/buenosaires.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/buenosaires.jpg" title="Buenos Aires" alt="Buenos Aires" class="thumb" /></a>
+            <a href="imgs/mapas/comuna1.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna1.jpg" title="Comuna 1" alt="Comuna 1" class="thumb" /></a>
+			<a href="imgs/mapas/comuna2.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna2.jpg" title="Comuna 2" alt="Comuna 2" class="thumb" /></a>
+			<a href="imgs/mapas/comuna3.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna3.jpg" title="Comuna 3" alt="Comuna 3" class="thumb" /></a>
+			<a href="imgs/mapas/comuna4.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna4.jpg" title="Comuna 4" alt="Comuna 4" class="thumb" /></a>
+			<a href="imgs/mapas/comuna5.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna5.jpg" title="Comuna 5" alt="Comuna 5" class="thumb" /></a>
+			<a href="imgs/mapas/comuna6.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna6.jpg" title="Comuna 6" alt="Comuna 6" class="thumb" /></a>
+			<a href="imgs/mapas/comuna7.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna7.jpg" title="Comuna 7" alt="Comuna 7" class="thumb" /></a>
+			<a href="imgs/mapas/comuna8.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna8.jpg" title="Comuna 8" alt="Comuna 8" class="thumb" /></a>
+			<a href="imgs/mapas/comuna9.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna9.jpg" title="Comuna 9" alt="Comuna 9" class="thumb" /></a>
+			<a href="imgs/mapas/comuna10.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna10.jpg" title="Comuna 10" alt="Comuna 10" class="thumb" /></a>
+			<a href="imgs/mapas/comuna11.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna11.jpg" title="Comuna 11" alt="Comuna 11" class="thumb" /></a>
+			<a href="imgs/mapas/comuna12.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna12.jpg" title="Comuna 12" alt="Comuna 12" class="thumb" /></a>
+			<a href="imgs/mapas/comuna13.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna13.jpg" title="Comuna 13" alt="Comuna 13" class="thumb" /></a>
+			<a href="imgs/mapas/comuna14.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna14.jpg" title="Comuna 14" alt="Comuna 14" class="thumb" /></a>
+			<a href="imgs/mapas/comuna15.jpg" class="thumb_link"><span class="selected"></span><img src="imgs/thumbs/comuna15.jpg" title="Comuna 15" alt="Comuna 15" class="thumb" /></a>
+
+
+
+            <p class="clear"></p>
+            <p><font size="2">Basado en código de <a href="http://manos.malihu.gr" target="_blank">malihu</a>.
+          	<br>
+          	Fotos orignales de <a href="buenosaires.gob.ar">buenosaires.gob.ar</a>.</font></p>
+        </div>
+	</div>
+    <div id="dragger_container"><div id="dragger"></div></div>
+</div>
+</div>
+<div id="bg">
+    <img src="imgs/mapas/buenosaires.jpg" title="Supremus Lucernarium" id="bgimg" />
+	<div id="preloader"><img src="ajax-loader_dark.gif" width="32" height="32" align="absmiddle" />Cargando. No desesperes...</div>
+    <div id="arrow_indicator"><img src="sw_arrow_indicator.png" width="50" height="50"  /></div>
+    <div id="nextimage_tip">Siguiente</div>
+</div>
+<script>
+	//set default view mode
+	$defaultViewMode="full"; //full (fullscreen background), fit (fit to window), original (no scale)
+	//cache vars
+	$bg=$("#bg");
+	$bgimg=$("#bg #bgimg");
+	$preloader=$("#preloader");
+	$outer_container=$("#outer_container");
+	$outer_container_a=$("#outer_container a.thumb_link");
+	$toolbar=$("#toolbar");
+	$nextimage_tip=$("#nextimage_tip");
+	
+$(window).load(function() {
+	$toolbar.data("imageViewMode",$defaultViewMode); //default view mode
+	ImageViewMode($toolbar.data("imageViewMode"));
+	//cache vars
+	$customScrollBox=$("#customScrollBox");
+	$customScrollBox_container=$("#customScrollBox .container");
+	$customScrollBox_content=$("#customScrollBox .content");
+	$dragger_container=$("#dragger_container");
+	$dragger=$("#dragger");
+	
+	CustomScroller();
+	
+	function CustomScroller(){
+		outerMargin=0;
+		innerMargin=20;
+		$customScrollBox.height($(window).height()-outerMargin);
+		$dragger_container.height($(window).height()-innerMargin);
+		visibleHeight=$(window).height()-outerMargin;
+		if($customScrollBox_container.height()>visibleHeight){ //custom scroll depends on content height
+			$dragger_container,$dragger.css("display","block");
+			totalContent=$customScrollBox_content.height();
+			draggerContainerHeight=$(window).height()-innerMargin;
+			animSpeed=400; //animation speed
+			easeType="easeOutCirc"; //easing type
+			bottomSpace=1.05; //bottom scrolling space
+			targY=0;
+			draggerHeight=$dragger.height();
+			$dragger.draggable({ 
+				axis: "y", 
+				containment: "parent", 
+				drag: function(event, ui) {
+					Scroll();
+				}, 
+				stop: function(event, ui) {
+					DraggerOut();
+				}
+			});
+
+			//scrollbar click
+			$dragger_container.click(function(e) {
+				var mouseCoord=(e.pageY - $(this).offset().top);
+				var targetPos=mouseCoord+$dragger.height();
+				if(targetPos<draggerContainerHeight){
+					$dragger.css("top",mouseCoord);
+					Scroll();
+				} else {
+					$dragger.css("top",draggerContainerHeight-$dragger.height());
+					Scroll();
+				}
+			});
+
+			//mousewheel
+			$(function($) {
+				$customScrollBox.bind("mousewheel", function(event, delta) {
+					vel = Math.abs(delta*80);
+					$dragger.css("top", $dragger.position().top-(delta*vel));
+					Scroll();
+					if($dragger.position().top<0){
+						$dragger.css("top", 0);
+						$customScrollBox_container.stop();
+						Scroll();
+					}
+					if($dragger.position().top>draggerContainerHeight-$dragger.height()){
+						$dragger.css("top", draggerContainerHeight-$dragger.height());
+						$customScrollBox_container.stop();
+						Scroll();
+					}
+					return false;
+				});
+			});
+
+			function Scroll(){
+				var scrollAmount=(totalContent-(visibleHeight/bottomSpace))/(draggerContainerHeight-draggerHeight);
+				var draggerY=$dragger.position().top;
+				targY=-draggerY*scrollAmount;
+				var thePos=$customScrollBox_container.position().top-targY;
+				$customScrollBox_container.stop().animate({top: "-="+thePos}, animSpeed, easeType); //with easing
+			}
+
+			//dragger hover
+			$dragger.mouseup(function(){
+				DraggerOut();
+			}).mousedown(function(){
+				DraggerOver();
+			});
+
+			function DraggerOver(){
+				$dragger.css("background", "url(round_custom_scrollbar_bg_over.png)");
+			}
+
+			function DraggerOut(){
+				$dragger.css("background", "url(round_custom_scrollbar_bg.png)");
+			}
+		} else { //hide custom scrollbar if content is short
+			$dragger,$dragger_container.css("display","none");
+		}
+	}
+
+	//resize browser window functions
+	$(window).resize(function() {
+		FullScreenBackground("#bgimg"); //scale bg image
+		$dragger.css("top",0); //reset content scroll
+		$customScrollBox_container.css("top",0);
+		$customScrollBox.unbind("mousewheel");
+		CustomScroller();
+	});
+	
+	LargeImageLoad($bgimg);
+});
+	
+	//loading bg image
+	$bgimg.load(function() {
+		LargeImageLoad($(this));
+	});
+	
+	function LargeImageLoad($this){
+		$preloader.fadeOut("fast"); //hide preloader
+		$this.removeAttr("width").removeAttr("height").css({ width: "", height: "" }); //lose all previous dimensions in order to rescale new image data
+		$bg.data("originalImageWidth",$this.width()).data("originalImageHeight",$this.height());
+		if($bg.data("newTitle")){
+			$this.attr("title",$bg.data("newTitle")); //set new image title attribute
+		}
+		FullScreenBackground($this); //scale new image
+		$bg.data("nextImage",$($outer_container.data("selectedThumb")).next().attr("href")); //get and store next image
+		if(typeof itemIndex!="undefined"){
+			if(itemIndex==lastItemIndex){ //check if it is the last image
+				$bg.data("lastImageReached","Y");
+				$bg.data("nextImage",$outer_container_a.first().attr("href")); //get and store next image
+			} else {
+				$bg.data("lastImageReached","N");
+			}
+		} else {
+			$bg.data("lastImageReached","N");
+		}
+		$this.fadeIn("slow"); //fadein background image
+		if($bg.data("nextImage") || $bg.data("lastImageReached")=="Y"){ //don't close thumbs pane on 1st load
+			SlidePanels("close"); //close the left pane
+		}
+		NextImageTip();
+	}
+
+	//slide in/out left pane
+	$outer_container.hover(
+		function(){ //mouse over
+			SlidePanels("open");
+		},
+		function(){ //mouse out
+			SlidePanels("close");
+		}
+	);
+	
+	//Clicking on thumbnail changes the background image
+	$outer_container_a.click(function(event){
+		event.preventDefault();
+		var $this=this;
+		$bgimg.css("display","none");
+		$preloader.fadeIn("fast"); //show preloader
+		//style clicked thumbnail
+		$outer_container_a.each(function() {
+    		$(this).children(".selected").css("display","none");
+  		});
+		$(this).children(".selected").css("display","block");
+		//get and store next image and selected thumb 
+		$outer_container.data("selectedThumb",$this); 
+		$bg.data("nextImage",$(this).next().attr("href")); 	
+		$bg.data("newTitle",$(this).children("img").attr("title")); //get and store new image title attribute
+		itemIndex=getIndex($this); //get clicked item index
+		lastItemIndex=($outer_container_a.length)-1; //get last item index
+		$bgimg.attr("src", "").attr("src", $this); //switch image
+	}); 
+
+	//clicking on large image loads the next one
+	$bgimg.click(function(event){
+		var $this=$(this);
+		if($bg.data("nextImage")){ //if next image data is stored
+			$this.css("display","none");
+			$preloader.fadeIn("fast"); //show preloader
+			$($outer_container.data("selectedThumb")).children(".selected").css("display","none"); //deselect thumb
+			if($bg.data("lastImageReached")!="Y"){
+				$($outer_container.data("selectedThumb")).next().children(".selected").css("display","block"); //select new thumb
+			} else {
+				$outer_container_a.first().children(".selected").css("display","block"); //select new thumb - first
+			}
+			//store new selected thumb
+			var selThumb=$outer_container.data("selectedThumb");
+			if($bg.data("lastImageReached")!="Y"){
+				$outer_container.data("selectedThumb",$(selThumb).next()); 
+			} else {
+				$outer_container.data("selectedThumb",$outer_container_a.first()); 
+			}
+			$bg.data("newTitle",$($outer_container.data("selectedThumb")).children("img").attr("title")); //get and store new image title attribute
+			if($bg.data("lastImageReached")!="Y"){
+				itemIndex++;
+			} else {
+				itemIndex=0;
+			}
+			$this.attr("src", "").attr("src", $bg.data("nextImage")); //switch image
+		}
+	});
+	
+	//function to get element index (fuck you IE!)
+	function getIndex(theItem){
+		for ( var i = 0, length = $outer_container_a.length; i < length; i++ ) {
+			if ( $outer_container_a[i] === theItem ) {
+				return i;
+			}
+		}
+	}
+	
+	//toolbar (image view mode button) hover
+	$toolbar.hover(
+		function(){ //mouse over
+			$(this).stop().fadeTo("fast",1);
+		},
+		function(){ //mouse out
+			$(this).stop().fadeTo("fast",0.8);
+		}
+	); 
+	$toolbar.stop().fadeTo("fast",0.8); //set its original state
+	
+	//Clicking on toolbar changes the image view mode
+	$toolbar.click(function(event){
+		if($toolbar.data("imageViewMode")=="full"){
+			ImageViewMode("fit");
+		} else if($toolbar.data("imageViewMode")=="fit") {
+			ImageViewMode("original");
+		} else if($toolbar.data("imageViewMode")=="original"){
+			ImageViewMode("full");
+		}
+	});
+
+	//next image balloon tip
+	function NextImageTip(){
+		if($bg.data("nextImage")){ //check if this is the first image
+			$nextimage_tip.stop().css("right",20).fadeIn("fast").fadeOut(2000,"easeInExpo",function(){$nextimage_tip.css("right",$(window).width());});
+		}
+	}
+
+	//slide in/out left pane function
+	function SlidePanels(action){
+		var speed=900;
+		var easing="easeInOutExpo";
+		if(action=="open"){
+			$("#arrow_indicator").fadeTo("fast",0);
+			$outer_container.stop().animate({left: 0}, speed,easing);
+			$bg.stop().animate({left: 585}, speed,easing);
+		} else {
+			$outer_container.stop().animate({left: -710}, speed,easing);
+			$bg.stop().animate({left: 0}, speed,easing,function(){$("#arrow_indicator").fadeTo("fast",1);});
+		}
+	}
+
+//Image scale function
+function FullScreenBackground(theItem){
+	var winWidth=$(window).width();
+	var winHeight=$(window).height();
+	var imageWidth=$(theItem).width();
+	var imageHeight=$(theItem).height();
+	if($toolbar.data("imageViewMode")!="original"){ //scale
+		$(theItem).removeClass("with_border").removeClass("with_shadow"); //remove extra styles of orininal view mode
+		var picHeight = imageHeight / imageWidth;
+		var picWidth = imageWidth / imageHeight;
+		if($toolbar.data("imageViewMode")!="fit"){ //image view mode: full
+			if ((winHeight / winWidth) < picHeight) {
+				$(theItem).css("width",winWidth).css("height",picHeight*winWidth);
+			} else {
+				$(theItem).css("height",winHeight).css("width",picWidth*winHeight);
+			};
+		} else { //image view mode: fit
+			if ((winHeight / winWidth) > picHeight) {
+				$(theItem).css("width",winWidth).css("height",picHeight*winWidth);
+			} else {
+				$(theItem).css("height",winHeight).css("width",picWidth*winHeight);
+			};
+		}
+		//center it
+		$(theItem).css("margin-left",((winWidth - $(theItem).width())/2)).css("margin-top",((winHeight - $(theItem).height())/2));
+	} else { //no scale
+		//add extra styles for orininal view mode
+		$(theItem).addClass("with_border").addClass("with_shadow");
+		//set original dimensions
+		$(theItem).css("width",$bg.data("originalImageWidth")).css("height",$bg.data("originalImageHeight"));
+		//center it
+		$(theItem).css("margin-left",((winWidth-$(theItem).outerWidth())/2)).css("margin-top",((winHeight-$(theItem).outerHeight())/2));
+	}
+}
+
+//image view mode function - full or fit
+function ImageViewMode(theMode){
+	$toolbar.data("imageViewMode", theMode); //store new mode
+	FullScreenBackground($bgimg); //scale bg image
+	//re-style button
+	if(theMode=="full"){
+		$toolbar.html("<span class='lightgrey'>IMAGE VIEW MODE &rsaquo;</span> FULL");
+	} else if(theMode=="fit") {
+		$toolbar.html("<span class='lightgrey'>IMAGE VIEW MODE &rsaquo;</span> FIT");
+	} else {
+		$toolbar.html("<span class='lightgrey'>IMAGE VIEW MODE &rsaquo;</span> ORIGINAL");
+	}
+}
+
+//preload script images
+var images=["ajax-loader_dark.gif","round_custom_scrollbar_bg_over.png"];
+$.each(images, function(i) {
+  images[i] = new Image();
+  images[i].src = this;
+});
+</script>
+</body>
+</html>
